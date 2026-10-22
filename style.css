@@ -1,0 +1,2642 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* =========================================
+   BASIC SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f4ee;
+    color: #172033;
+}
+
+
+/* =========================================
+   COLORS
+
+   Navy   = #172033
+   Blue   = #294c70
+   Cream  = #f7f4ee
+   Gold   = #c49a52
+   White  = #ffffff
+========================================= */
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 7%;
+    background: #ffffff;
+
+    border-bottom: 1px solid #e4dfd4;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #172033;
+}
+
+.logo span {
+    color: #c49a52;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 40px;
+}
+
+.navbar nav a {
+    position: relative;
+    text-decoration: none;
+    color: #172033;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+.navbar nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #c49a52;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #294c70;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   HOME
+========================================= */
+
+.home {
+    min-height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 100px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #172033,
+        #294c70
+    );
+
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+
+    left: -150px;
+    top: -100px;
+}
+
+.home::after {
+    content: "";
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+
+    right: -200px;
+    bottom: -200px;
+}
+
+.home-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+}
+
+.small-title {
+    letter-spacing: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #d9c08b;
+}
+
+.home h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 30px;
+}
+
+.home-description {
+    max-width: 650px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e8e8e8;
+    margin-bottom: 35px;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 16px 30px;
+
+    background: #c49a52;
+    color: #172033;
+
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.team-section,
+.skills-section,
+.contact-section {
+    padding: 110px 7%;
+    background: #f7f4ee;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.section-title p {
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    color: #c49a52;
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: clamp(38px, 5vw, 60px);
+    margin-bottom: 15px;
+    color: #172033;
+}
+
+.section-title span {
+    color: #667085;
+    font-size: 17px;
+}
+
+
+/* =========================================
+   TEAM CARDS
+========================================= */
+
+.team-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.profile-card {
+    background: white;
+    padding: 30px 25px;
+    text-align: center;
+
+    border: 1px solid #e4dfd4;
+    border-radius: 12px;
+
+    box-shadow: 0 10px 30px rgba(23, 32, 51, 0.08);
+    transition: 0.35s;
+}
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(23, 32, 51, 0.14);
+}
+
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
+.profile-image {
+    width: 190px;
+    height: 190px;
+
+    margin: auto;
+    margin-bottom: 25px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 5px solid #c49a52;
+    background: #eeeeee;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.profile-image:hover img {
+    transform: scale(1.12);
+}
+
+.profile-card h3 {
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: #172033;
+}
+
+.profile-card h4 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #294c70;
+    margin-bottom: 25px;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: #172033;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.profile-link:hover {
+    color: #c49a52;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   MODAL / POPUP
+========================================= */
+
+.modal {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+
+    background: rgba(10, 16, 28, 0.82);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    /* Allows the outer overlay to scroll if necessary */
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* SHOW POPUP WHEN PROFILE LINK IS CLICKED */
+
+.modal:target {
+    display: flex;
+}
+
+/* SCROLLABLE PROFILE BOX */
+
+.modal-box {
+    width: min(900px, 95%);
+
+    /* Prevents the popup from becoming taller than the screen */
+    max-height: 85vh;
+    max-height: 85dvh;
+
+    /* Scroll the information inside the white box */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: white;
+    border-radius: 15px;
+    padding: 45px;
+
+    display: grid;
+    grid-template-columns: 280px minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+
+    position: relative;
+    margin: auto;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+
+    animation: popup 0.3s ease;
+
+    /* Keeps scrolling inside the popup */
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #c49a52 #f1f1f1;
+}
+
+/* PROFILE BOX SCROLLBAR - CHROME, EDGE, SAFARI */
+
+.modal-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: #c49a52;
+    border-radius: 10px;
+}
+
+.modal-box::-webkit-scrollbar-thumb:hover {
+    background: #a87d35;
+}
+
+/* POPUP ANIMATION */
+
+@keyframes popup {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MODAL IMAGE
+========================================= */
+
+.modal-image {
+    width: 280px;
+    height: 350px;
+
+    overflow: hidden;
+    border-radius: 12px;
+    border: 5px solid #c49a52;
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-small {
+    color: #c49a52;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.modal-info {
+    min-width: 0;
+}
+
+.modal-info h2 {
+    font-size: 50px;
+    color: #172033;
+    margin-bottom: 5px;
+}
+
+.modal-info h3 {
+    color: #294c70;
+    margin-bottom: 25px;
+}
+
+.modal-info > p {
+    line-height: 1.7;
+    color: #667085;
+    margin-bottom: 25px;
+}
+
+.info-list {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.info-list p {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-button {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    font-size: 30px;
+    color: #172033;
+
+    border-radius: 50%;
+    transition: 0.5s;
+
+    z-index: 5;
+}
+
+/* FLIP EFFECT */
+
+.close-button:hover {
+    background: #172033;
+    color: white;
+    transform: rotate(180deg);
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-section {
+    background: #172033;
+    color: white;
+}
+
+.skills-section .section-title h2 {
+    color: white;
+}
+
+.skills-section .section-title span {
+    color: #cbd2dc;
+}
+
+.skills-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.skill-member {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 22px 25px;
+
+    background: white;
+    color: #172033;
+
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.skill-member:hover {
+    transform: translateY(-5px);
+    background: #f1eadc;
+}
+
+.skill-avatar {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: #c49a52;
+    color: #172033;
+
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.skill-avatar.large {
+    width: 80px;
+    height: 80px;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+.skill-member h3 {
+    font-size: 19px;
+    margin-bottom: 4px;
+}
+
+.skill-member span {
+    font-size: 14px;
+    color: #667085;
+}
+
+.skill-member b {
+    margin-left: auto;
+    font-size: 25px;
+    color: #c49a52;
+}
+
+
+/* =========================================
+   SKILL POPUP
+========================================= */
+
+/* =========================================================
+   SKILLS POPUP REDESIGN
+   Midnight Blue: #1B1F3B
+   Rose Quartz:   #E6B8C2
+   Pearl White:   #FAF9F6
+   Only styles the View Skills popup.
+========================================================= */
+
+/* Softer overlay */
+.modal:target:has(.skill-modal) {
+    background: rgba(27, 31, 59, 0.78);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    padding: 22px;
+}
+
+/* Premium Pearl White card */
+.modal:target .skill-modal {
+    box-sizing: border-box;
+    width: min(720px, 96%);
+    max-width: 720px;
+    max-height: 88vh;
+    max-height: 88dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    column-gap: 28px;
+    row-gap: 10px;
+    padding: 48px 46px 42px;
+    border: 1px solid rgba(230, 184, 194, 0.55);
+    border-radius: 26px;
+    text-align: left;
+    color: #1B1F3B;
+    background:
+        radial-gradient(
+            circle at 100% 100%,
+            rgba(230, 184, 194, 0.38),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(250, 249, 246, 0.98),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #FFFFFF 0%,
+            #FAF9F6 58%,
+            #F8E9ED 100%
+        );
+    box-shadow:
+        0 32px 90px rgba(27, 31, 59, 0.32),
+        0 8px 24px rgba(27, 31, 59, 0.12);
+    animation: skillPopupReveal 0.38s cubic-bezier(.2, .8, .2, 1) both;
+    scrollbar-width: thin;
+    scrollbar-color: #E6B8C2 #FAF9F6;
+}
+
+/* Decorative corner glow */
+.modal:target .skill-modal::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    right: -95px;
+    bottom: -135px;
+    border: 1px solid rgba(230, 184, 194, 0.42);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 18px rgba(230, 184, 194, 0.16),
+        0 0 0 38px rgba(230, 184, 194, 0.10);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Avatar */
+.modal:target .skill-modal > .skill-avatar.large {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 132px;
+    height: 132px;
+    min-width: 132px;
+    margin: 0 auto;
+    border: 5px solid #FFFFFF;
+    outline: 2px solid #E6B8C2;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #B9798A, #1B1F3B);
+    color: #FAF9F6;
+    font-size: 46px;
+    font-weight: 700;
+    box-shadow: 0 12px 28px rgba(27, 31, 59, 0.22);
+}
+
+/* Member name */
+.modal:target .skill-modal > h2 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 35px 0 0;
+    color: #1B1F3B;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    text-shadow: 0 2px 12px rgba(230, 184, 194, 0.20);
+}
+
+/* Member role */
+.modal:target .skill-modal > p {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    color: #B9798A;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+/* Decorative divider */
+.modal:target .skill-modal > p::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 3px;
+    margin-top: 16px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, #B9798A, #E6B8C2);
+}
+
+/* Skill tags container */
+.modal:target .skill-modal > .skill-tags {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 11px;
+    margin-top: 18px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual skill tags */
+.modal:target .skill-modal > .skill-tags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 11px 17px;
+    border: 1px solid #EAD5DA;
+    border-radius: 999px;
+    background: rgba(248, 233, 237, 0.94);
+    color: #1B1F3B;
+    font-family: var(--font-body, Arial, sans-serif);
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.35;
+    box-shadow: 0 4px 12px rgba(27, 31, 59, 0.06);
+    transition:
+        transform 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+/* Skill tag hover */
+.modal:target .skill-modal > .skill-tags span:hover {
+    transform: translateY(-3px);
+    background: #F3DDE2;
+    border-color: #E6B8C2;
+    box-shadow: 0 8px 18px rgba(27, 31, 59, 0.12);
+}
+
+/* Close button */
+.modal:target .skill-modal .close-button {
+    top: 16px;
+    right: 17px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #EAD5DA;
+    border-radius: 50%;
+    background: rgba(250, 249, 246, 0.92);
+    color: #1B1F3B;
+    font-size: 27px;
+    line-height: 1;
+    z-index: 5;
+}
+
+.modal:target .skill-modal .close-button:hover {
+    background: #1B1F3B;
+    color: #FAF9F6;
+    border-color: #1B1F3B;
+    transform: rotate(90deg);
+}
+
+/* Popup animation */
+@keyframes skillPopupReveal {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    .modal:target:has(.skill-modal) {
+        padding: 14px;
+    }
+
+    .modal:target .skill-modal {
+        width: 100%;
+        max-height: 90vh;
+        max-height: 90dvh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        justify-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 52px 22px 28px;
+        border-radius: 22px;
+    }
+
+    .modal:target .skill-modal > .skill-avatar.large {
+        grid-column: 1;
+        grid-row: 1;
+        width: 104px;
+        height: 104px;
+        min-width: 104px;
+        font-size: 36px;
+    }
+
+    .modal:target .skill-modal > h2 {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0;
+        font-size: 34px;
+    }
+
+    .modal:target .skill-modal > p {
+        grid-column: 1;
+        grid-row: 3;
+        font-size: 12px;
+    }
+
+    .modal:target .skill-modal > p::after {
+        margin: 12px auto 0;
+    }
+
+    .modal:target .skill-modal > .skill-tags {
+        grid-column: 1;
+        grid-row: 4;
+        justify-content: center;
+        margin-top: 12px;
+        gap: 8px;
+    }
+
+    .modal:target .skill-modal > .skill-tags span {
+        min-height: 39px;
+        padding: 9px 13px;
+        font-size: 12px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .modal:target .skill-modal {
+        animation: none;
+    }
+
+    .modal:target .skill-modal > .skill-tags span {
+        transition: none;
+    }
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-container {
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    text-align: center;
+
+    background: white;
+    padding: 35px 25px;
+
+    border: 1px solid #e4dfd4;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(23, 32, 51, 0.12);
+}
+
+.contact-avatar {
+    width: 120px;
+    height: 120px;
+
+    margin: auto;
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 4px solid #c49a52;
+}
+
+.contact-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.contact-avatar:hover img {
+    transform: scale(1.1);
+}
+
+.contact-avatar.big {
+    width: 150px;
+    height: 150px;
+}
+
+.contact-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.contact-card p {
+    color: #667085;
+    margin-bottom: 25px;
+}
+
+.contact-button {
+    display: block;
+    padding: 13px;
+
+    background: #172033;
+    color: white;
+
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contact-button:hover {
+    background: #c49a52;
+    color: #172033;
+}
+
+
+/* =========================================
+   CONTACT POPUP
+========================================= */
+
+.contact-modal {
+    width: min(450px, 95%);
+
+    background: white;
+    border-radius: 15px;
+    padding: 45px;
+
+    text-align: center;
+    position: relative;
+
+    animation: popup 0.3s ease;
+}
+
+.contact-modal h2 {
+    font-size: 35px;
+    color: #172033;
+    margin-bottom: 5px;
+}
+
+.contact-modal > p {
+    color: #294c70;
+    margin-bottom: 30px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-links a {
+    padding: 14px;
+
+    background: #f1eadc;
+    border: 1px solid #e2d6c1;
+
+    border-radius: 7px;
+    text-decoration: none;
+
+    color: #172033;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: #172033;
+    color: white;
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+    padding: 60px 20px;
+
+    background: #0f1726;
+    color: white;
+}
+
+footer h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+footer h2 span {
+    color: #c49a52;
+}
+
+footer p {
+    color: #cbd2dc;
+    margin-bottom: 25px;
+}
+
+.back-top {
+    color: #c49a52;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-top:hover {
+    color: white;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .team-container,
+    .contact-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal {
+        padding: 20px;
+    }
+
+    .modal-box {
+        width: min(600px, 95%);
+
+        max-height: 90vh;
+        max-height: 90dvh;
+
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        gap: 25px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .modal-image {
+        margin: auto;
+        max-width: 100%;
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .navbar nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 14px;
+    }
+
+    .home {
+        min-height: 85vh;
+        padding: 80px 20px;
+    }
+
+    .home h1 {
+        font-size: 48px;
+        letter-spacing: -1px;
+    }
+
+    .home-description {
+        font-size: 15px;
+    }
+
+    .team-section,
+    .skills-section,
+    .contact-section {
+        padding: 80px 5%;
+    }
+
+    .team-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+        font-size: 38px;
+    }
+
+    .profile-image {
+        width: 170px;
+        height: 170px;
+    }
+
+    .modal {
+        padding: 12px;
+        align-items: center;
+    }
+
+    .modal-box {
+        width: 100%;
+
+        max-height: 90vh;
+        max-height: 90dvh;
+
+        padding: 35px 20px;
+
+        grid-template-columns: 1fr;
+        gap: 25px;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .modal-image {
+        width: min(220px, 100%);
+        height: 270px;
+    }
+
+    .modal-info h2 {
+        font-size: 38px;
+    }
+
+    .skill-modal {
+        padding: 40px 20px;
+    }
+
+    .contact-modal {
+        padding: 40px 20px;
+    }
+}
+/* =========================================
+   BABY BLUE COLOR THEME
+   Color overrides only — original layout stays unchanged.
+========================================= */
+
+body {
+    background: #EAF6FF;
+    color: #23415C;
+}
+
+.navbar {
+    background: #FFFFFF;
+    border-bottom-color: #D6EAF8;
+}
+
+.logo { color: #23415C; }
+.logo span { color: #5B9BD5; }
+.navbar nav a { color: #23415C; }
+.navbar nav a::after { background: #5B9BD5; }
+.navbar nav a:hover { color: #5B9BD5; }
+
+.home {
+    background: linear-gradient(135deg, #BDE0FE, #5B9BD5);
+    color: #17324A;
+}
+.home::before { border-color: rgba(255, 255, 255, 0.35); }
+.home::after { border-color: rgba(255, 255, 255, 0.28); }
+.small-title { color: #23415C; }
+.home-description { color: #23415C; }
+.main-button {
+    background: #FFFFFF;
+    color: #23415C;
+}
+.main-button:hover { background: #EAF6FF; }
+
+.team-section,
+.contact-section {
+    background: #EAF6FF;
+}
+.section-title p { color: #5B9BD5; }
+.section-title h2 { color: #23415C; }
+.section-title span { color: #52697D; }
+
+.profile-card,
+.contact-card {
+    background: #FFFFFF;
+    border-color: #D6EAF8;
+    box-shadow: 0 10px 30px rgba(35, 65, 92, 0.08);
+}
+.profile-card:hover,
+.contact-card:hover {
+    box-shadow: 0 18px 40px rgba(35, 65, 92, 0.14);
+}
+.profile-image,
+.contact-avatar,
+.modal-image {
+    border-color: #BDE0FE;
+}
+.profile-card h3 { color: #23415C; }
+.profile-card h4 { color: #5B9BD5; }
+.profile-link { color: #23415C; }
+.profile-link:hover { color: #5B9BD5; }
+
+.modal { background: rgba(25, 49, 70, 0.72); }
+.modal-box,
+.skill-modal,
+.contact-modal {
+    background: #FFFFFF;
+}
+.modal-box { scrollbar-color: #8FC8F5 #EAF6FF; }
+.modal-box::-webkit-scrollbar-track { background: #EAF6FF; }
+.modal-box::-webkit-scrollbar-thumb { background: #8FC8F5; }
+.modal-box::-webkit-scrollbar-thumb:hover { background: #5B9BD5; }
+.modal-small { color: #5B9BD5; }
+.modal-info h2 { color: #23415C; }
+.modal-info h3 { color: #5B9BD5; }
+.modal-info > p { color: #52697D; }
+.info-list { border-top-color: #D6EAF8; }
+.info-list p { color: #40576B; }
+.close-button { color: #23415C; }
+.close-button:hover {
+    background: #5B9BD5;
+    color: #FFFFFF;
+}
+
+.skills-section {
+    background: linear-gradient(135deg, #DDF0FF, #BDE0FE);
+    color: #23415C;
+}
+.skills-section .section-title h2 { color: #23415C; }
+.skills-section .section-title span { color: #52697D; }
+.skill-member {
+    background: #FFFFFF;
+    color: #23415C;
+}
+.skill-member:hover { background: #EAF6FF; }
+.skill-avatar {
+    background: #BDE0FE;
+    color: #23415C;
+}
+.skill-member span { color: #52697D; }
+.skill-member b { color: #5B9BD5; }
+.skill-modal h2 { color: #23415C; }
+.skill-modal > p { color: #5B9BD5; }
+.skill-tags span {
+    background: #EAF6FF;
+    color: #23415C;
+    border-color: #BDE0FE;
+}
+
+.contact-avatar { border-color: #BDE0FE; }
+.contact-card p { color: #52697D; }
+.contact-button {
+    background: #5B9BD5;
+    color: #FFFFFF;
+}
+.contact-button:hover {
+    background: #BDE0FE;
+    color: #23415C;
+}
+.contact-modal h2 { color: #23415C; }
+.contact-modal > p { color: #5B9BD5; }
+.contact-links a {
+    background: #EAF6FF;
+    border-color: #D6EAF8;
+    color: #23415C;
+}
+.contact-links a:hover {
+    background: #5B9BD5;
+    color: #FFFFFF;
+}
+
+footer {
+    background: #23415C;
+    color: #FFFFFF;
+}
+footer h2 span,
+.back-top { color: #BDE0FE; }
+footer p { color: #DCEEFF; }
+.back-top:hover { color: #FFFFFF; }
+
+
+/* =========================================================
+   ADDED ENHANCEMENTS — ORIGINAL STYLES AND CONTENT PRESERVED
+   Moving baby-blue background, decorative particles, fonts,
+   and smoother hover effects.
+========================================================= */
+
+/* Modern font pairing */
+body {
+    font-family: 'ITC Avant Garde Gothic', 'Avant Garde', Arial, Helvetica, sans-serif;
+}
+
+.logo,
+.home h1,
+.section-title h2,
+.profile-card h3,
+.modal-info h2,
+.skill-member h3,
+.skill-modal h2,
+.contact-card h3,
+.contact-modal h2,
+footer h2 {
+    font-family: 'Manrope', 'ITC Avant Garde Gothic', 'Avant Garde', sans-serif;
+}
+
+.logo {
+    letter-spacing: -0.8px;
+    font-weight: 800;
+}
+
+.navbar nav a {
+    font-weight: 700;
+    letter-spacing: 0.1px;
+}
+
+.home h1 {
+    font-weight: 800;
+    line-height: 0.98;
+    text-wrap: balance;
+}
+
+.section-title h2 {
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+/* Moving gradient and floating particle pattern on the home section.
+   Uses the existing .home section, so no HTML content is removed. */
+.home {
+    isolation: isolate;
+    background-color: #A8D5F5;
+    background-image:
+        radial-gradient(circle at 12% 22%, rgba(255,255,255,0.75) 0 2px, transparent 3px),
+        radial-gradient(circle at 28% 72%, rgba(255,255,255,0.70) 0 3px, transparent 4px),
+        radial-gradient(circle at 68% 28%, rgba(255,255,255,0.65) 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 68%, rgba(255,255,255,0.75) 0 3px, transparent 4px),
+        radial-gradient(circle at 48% 48%, rgba(255,255,255,0.42) 0 2px, transparent 3px),
+        linear-gradient(-45deg, #BDE0FE, #8FC5F0, #DDF2FF, #78B5E8, #BDE0FE);
+    background-size:
+        170px 190px,
+        230px 250px,
+        210px 220px,
+        270px 280px,
+        190px 210px,
+        400% 400%;
+    animation: portfolioBackgroundMove 22s ease-in-out infinite;
+}
+
+@keyframes portfolioBackgroundMove {
+    0% {
+        background-position: 0 0, 40px 80px, 100px 20px, 60px 120px, 140px 60px, 0% 50%;
+    }
+    50% {
+        background-position: 170px -190px, -190px -170px, 310px -200px, -210px -160px, 240px -150px, 100% 50%;
+    }
+    100% {
+        background-position: 340px -380px, -420px -420px, 520px -420px, -480px -440px, 330px -360px, 0% 50%;
+    }
+}
+
+/* Animate the large decorative circles already in the home section */
+.home::before {
+    animation: circleFloatOne 13s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home::after {
+    animation: circleFloatTwo 16s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.home-content {
+    z-index: 1;
+}
+
+@keyframes circleFloatOne {
+    from { transform: translate3d(0, 0, 0) rotate(0deg); }
+    to   { transform: translate3d(32px, 24px, 0) rotate(12deg); }
+}
+
+@keyframes circleFloatTwo {
+    from { transform: translate3d(0, 0, 0) rotate(0deg); }
+    to   { transform: translate3d(-35px, -28px, 0) rotate(-10deg); }
+}
+
+/* Baby-blue accents across existing sections */
+.team-section,
+.contact-section {
+    background: #EAF6FF;
+}
+
+.skills-section {
+    background: linear-gradient(135deg, #DDF0FF, #B9DEFC);
+    color: #23415C;
+}
+
+.skills-section .section-title h2 { color: #23415C; }
+.skills-section .section-title p { color: #438FD2; }
+.skills-section .section-title span { color: #496984; }
+
+.logo span,
+.section-title p,
+.profile-card h4,
+.modal-small,
+.back-top {
+    color: #4B98D9;
+}
+
+.navbar nav a::after { background: #5B9BD5; }
+.profile-image,
+.modal-image,
+.contact-avatar { border-color: #B9DEFC; }
+
+.main-button {
+    background: #FFFFFF;
+    color: #23415C;
+    box-shadow: 0 8px 22px rgba(35, 65, 92, 0.10);
+}
+.main-button:hover { background: #23415C; color: #FFFFFF; }
+.skill-avatar { background: #B9DEFC; color: #23415C; }
+.skill-member:hover { background: #F0F8FF; }
+.skill-member b { color: #5B9BD5; }
+
+.skill-tags span,
+.contact-links a {
+    background: #EAF6FF;
+    border-color: #D1E8FA;
+    color: #23415C;
+}
+
+.contact-button { background: #5B9BD5; color: #FFFFFF; }
+.contact-button:hover,
+.contact-links a:hover { background: #23415C; color: #FFFFFF; }
+
+.close-button { color: #23415C; }
+.close-button:hover { background: #5B9BD5; color: #FFFFFF; }
+footer { background: #23415C; }
+footer h2 span { color: #91C9F7; }
+
+/* Smooth hover effects for existing cards and buttons */
+.profile-card,
+.contact-card,
+.skill-member,
+.main-button,
+.profile-link,
+.contact-button {
+    transition: transform 0.32s ease, box-shadow 0.32s ease,
+        background-color 0.32s ease, color 0.32s ease, border-color 0.32s ease;
+}
+
+.profile-card:hover,
+.contact-card:hover {
+    border-color: #B9DEFC;
+    box-shadow: 0 18px 42px rgba(35, 65, 92, 0.13);
+}
+
+@media (max-width: 650px) {
+    .home h1 { letter-spacing: -1.5px; }
+    .home {
+        background-size: 170px 190px, 230px 250px, 210px 220px,
+            270px 280px, 190px 210px, 500% 500%;
+    }
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+    .home,
+    .home::before,
+    .home::after { animation: none !important; }
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   EXTRA ENHANCEMENTS — PARTICLES THROUGHOUT THE WHOLE PAGE
+   Original content, cards, popups, and layout are preserved.
+========================================================= */
+
+/* Beautiful, readable font pairing */
+body {
+    font-family: 'ITC Avant Garde Gothic', 'Avant Garde', Arial, Helvetica, sans-serif;
+    letter-spacing: 0.05px;
+}
+
+h1, h2, h3, h4, .logo, .navbar nav a,
+.profile-card h3, .contact-card h3,
+.modal-info h2, .skill-modal h2, .contact-modal h2 {
+    font-family: 'Plus Jakarta Sans', 'ITC Avant Garde Gothic', 'Avant Garde', sans-serif;
+    letter-spacing: -0.45px;
+}
+
+.home h1, .section-title h2 {
+    font-weight: 800;
+    letter-spacing: -1.4px;
+}
+
+p, .profile-card p, .modal-info p, .contact-card p {
+    line-height: 1.75;
+}
+
+/* Floating particle overlay visible across every section while scrolling.
+   It is subtle and pointer-events:none, so links and buttons still work. */
+body {
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    pointer-events: none;
+    opacity: 0.30;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 2px, transparent 2.8px),
+        radial-gradient(circle, rgba(91,155,213,0.72) 0 1.7px, transparent 2.6px),
+        radial-gradient(circle, rgba(255,255,255,0.85) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(91,155,213,0.55) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.9) 0 1.4px, transparent 2.4px);
+    background-size: 145px 175px, 190px 210px, 230px 190px, 270px 260px, 320px 280px;
+    background-position: 0 0, 55px 85px, 110px 30px, 170px 130px, 35px 190px;
+    animation: allSectionParticles 28s linear infinite;
+}
+
+@keyframes allSectionParticles {
+    0% { background-position: 0 0, 55px 85px, 110px 30px, 170px 130px, 35px 190px; }
+    50% { background-position: 145px -175px, -135px -125px, 340px -160px, -100px -130px, 355px -90px; }
+    100% { background-position: 290px -350px, -325px -335px, 570px -350px, -370px -390px, 675px -370px; }
+}
+
+/* Section-specific particle patterns preserve the original blue backgrounds. */
+.team-section,
+.contact-section {
+    background-color: #EAF6FF;
+    background-image:
+        radial-gradient(circle, rgba(91,155,213,0.15) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(91,155,213,0.12) 0 1.5px, transparent 2.5px);
+    background-size: 180px 210px, 240px 230px, 300px 260px;
+    animation: sectionParticles 25s linear infinite;
+}
+
+.skills-section {
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.80) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(91,155,213,0.19) 0 2px, transparent 3px),
+        linear-gradient(135deg, #DDF0FF, #B9DEFC);
+    background-size: 190px 220px, 260px 240px, 100% 100%;
+    animation: skillsParticles 27s linear infinite;
+}
+
+@keyframes sectionParticles {
+    from { background-position: 0 0, 70px 100px, 130px 30px; }
+    to { background-position: 180px -210px, -170px -130px, 430px -230px; }
+}
+
+@keyframes skillsParticles {
+    from { background-position: 0 0, 80px 100px, 0 0; }
+    to { background-position: 190px -220px, -180px -140px, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::after, .team-section, .skills-section, .contact-section {
+        animation: none !important;
+    }
+}
+
+
+/* =========================================
+   DISTINCTIVE TYPOGRAPHY — BOLD + CLEAN
+   Bebas Neue for display headings, Poppins for readable text
+========================================= */
+
+html, body,
+button, input, textarea, select,
+.navbar nav a,
+.home-description,
+.small-title,
+.section-title p,
+.section-title span,
+.profile-link,
+.skill-member,
+.contact-button,
+.contact-links a,
+.modal-info p,
+.contact-modal p,
+footer p {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.logo,
+.home h1,
+.section-title h2,
+.profile-card h3,
+.profile-card h4,
+.modal-info h2,
+.skill-modal h2,
+.contact-card h3,
+.contact-modal h2,
+footer h2 {
+    font-family: 'Bebas Neue', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.04em;
+}
+
+/* Keep the main hero heading bold and striking */
+.home h1 {
+    letter-spacing: 0.02em;
+    line-height: 0.98;
+}
+
+
+
+/* =========================================================
+   ALWAYS-FLOATING PROFILE PHOTO + ORBITING PARTICLES
+   The large photo floats continuously while its profile popup is open.
+   Decorative particles are created with CSS only; no JavaScript needed.
+========================================================= */
+
+/* Keep the popup photo frame as the animation anchor */
+.modal:target .modal-image {
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+    animation: profileFrameFloat 3.6s ease-in-out infinite;
+    box-shadow: 0 12px 32px rgba(91, 155, 213, 0.18);
+    will-change: transform;
+}
+
+/* Keep the photo clipped inside its rounded frame */
+.modal:target .modal-image img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    border-radius: 7px;
+    animation: profilePhotoAppear 0.9s ease-out both;
+}
+
+/* Particle layer around the picture */
+.modal:target .modal-image::before,
+.modal:target .modal-image::after {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: 18px;
+    background-repeat: no-repeat;
+}
+
+/* Small light-blue and white particles */
+.modal:target .modal-image::before {
+    background-image:
+        radial-gradient(circle, #FFFFFF 0 3px, transparent 4px),
+        radial-gradient(circle, #8FC8F5 0 3px, transparent 4px),
+        radial-gradient(circle, #FFFFFF 0 2px, transparent 3px),
+        radial-gradient(circle, #5B9BD5 0 2.5px, transparent 3.5px),
+        radial-gradient(circle, #DDF2FF 0 4px, transparent 5px),
+        radial-gradient(circle, #8FC8F5 0 2px, transparent 3px);
+    background-size: 14px 14px, 12px 12px, 10px 10px, 12px 12px, 15px 15px, 10px 10px;
+    background-position: 8% 20%, 88% 15%, 95% 58%, 12% 82%, 75% 92%, 48% 4%;
+    animation: profileParticlesDrift 5s ease-in-out infinite alternate;
+}
+
+/* Extra soft glowing dots drifting in the opposite direction */
+.modal:target .modal-image::after {
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(91,155,213,0.85) 0 3px, transparent 4px),
+        radial-gradient(circle, rgba(221,242,255,0.95) 0 2.5px, transparent 3.5px),
+        radial-gradient(circle, rgba(255,255,255,0.95) 0 3px, transparent 4px),
+        radial-gradient(circle, rgba(91,155,213,0.65) 0 2px, transparent 3px);
+    background-size: 12px 12px, 14px 14px, 11px 11px, 13px 13px, 10px 10px;
+    background-position: 22% 5%, 92% 35%, 4% 55%, 65% 0%, 82% 78%;
+    animation: profileParticlesDrift 6.5s ease-in-out infinite alternate-reverse;
+}
+
+/* The picture keeps floating for as long as the popup is open */
+@keyframes profileFrameFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* One-time reveal when View Profile is clicked */
+@keyframes profilePhotoAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Particles drift around the frame continuously */
+@keyframes profileParticlesDrift {
+    0% {
+        transform: translate3d(-5px, 5px, 0) rotate(0deg);
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(7px, -9px, 0) rotate(12deg);
+        opacity: 0.75;
+    }
+}
+
+/* A little extra glow on hover */
+.modal:target .modal-image:hover {
+    box-shadow: 0 16px 38px rgba(91, 155, 213, 0.32);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .modal:target .modal-image,
+    .modal:target .modal-image img,
+    .modal:target .modal-image::before,
+    .modal:target .modal-image::after {
+        animation: none !important;
+    }
+}
+
+
+
+/* =========================================================
+   TYPOGRAPHY UPDATE — POPPINS + INTER
+   Poppins: headings and display text
+   Inter: body copy, navigation, labels, and interface text
+   Added at the end so it overrides older font declarations.
+========================================================= */
+
+:root {
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Main readable font across the website */
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-body) !important;
+}
+
+/* Body copy and descriptive text */
+p,
+li,
+.profile-card p,
+.modal-info p,
+.info-list p,
+.contact-card p,
+.home-description,
+.section-title span,
+.skill-member span,
+footer p {
+    font-family: var(--font-body) !important;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+/* Headings use Poppins for a consistent, modern look */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.home h1,
+.section-title h2,
+.profile-card h3,
+.profile-card h4,
+.modal-info h2,
+.modal-info h3,
+.skill-member h3,
+.skill-modal h2,
+.contact-card h3,
+.contact-modal h2,
+footer h2 {
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.035em;
+}
+
+/* Strong hero and section headings */
+.home h1,
+.section-title h2 {
+    font-weight: 700 !important;
+    letter-spacing: -0.045em;
+}
+
+/* Logo: bold, clean, and easy to recognize */
+.logo {
+    font-weight: 700 !important;
+    letter-spacing: -0.04em;
+}
+
+/* Navigation: clear without looking too heavy */
+.navbar nav a {
+    font-family: var(--font-body) !important;
+    font-size: 15px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+}
+
+/* Small section labels and role names */
+.small-title,
+.section-title p,
+.profile-card h4,
+.modal-small {
+    font-family: var(--font-body) !important;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+/* Profile names and popup titles */
+.profile-card h3 {
+    font-size: 25px;
+    font-weight: 600 !important;
+    letter-spacing: -0.035em;
+}
+
+.modal-info h2 {
+    font-size: clamp(36px, 4vw, 50px);
+    font-weight: 700 !important;
+    letter-spacing: -0.045em;
+}
+
+.modal-info h3,
+.skill-modal > p,
+.contact-modal > p {
+    font-family: var(--font-body) !important;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+/* Buttons, links, skill labels, and contact actions */
+.main-button,
+.profile-link,
+.skill-member,
+.skill-member b,
+.contact-button,
+.contact-links a,
+.back-top,
+.close-button {
+    font-family: var(--font-body) !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Make popup paragraphs especially comfortable to read */
+.modal-info > p,
+.info-list p {
+    font-size: 15.5px;
+    line-height: 1.85;
+}
+
+/* Keep smaller screens balanced */
+@media (max-width: 650px) {
+    .home h1 {
+        letter-spacing: -0.04em;
+    }
+
+    .section-title h2 {
+        letter-spacing: -0.04em;
+    }
+
+    .modal-info > p,
+    .info-list p {
+        font-size: 14.5px;
+        line-height: 1.8;
+    }
+}
+
+
+/* =========================================================
+   FINAL TYPOGRAPHY UPDATE — MONTSERRAT + OPEN SANS
+   Cooper Black: headings, logo, and profile/member names
+   Avant Garde: body text, navigation, buttons, and interface text
+   Added at the end to override all previous font declarations.
+========================================================= */
+
+:root {
+    --font-heading: 'Cooper Black', 'Cooper', sans-serif;
+    --font-body: 'ITC Avant Garde Gothic', 'Avant Garde', sans-serif;
+}
+
+/* Default readable font across the whole website */
+html,
+body,
+button,
+input,
+textarea,
+select {
+    font-family: var(--font-body) !important;
+}
+
+/* Headings and display text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.home h1,
+.section-title h2,
+.profile-card h3,
+.profile-card h4,
+.modal-info h2,
+.modal-info h3,
+.skill-member h3,
+.skill-modal h2,
+.contact-card h3,
+.contact-modal h2,
+footer h2 {
+    font-family: var(--font-heading) !important;
+}
+
+/* Main headings */
+.home h1,
+.section-title h2 {
+    font-weight: 700 !important;
+}
+
+/* Logo */
+.logo {
+    font-weight: 700 !important;
+}
+
+/* Body copy and descriptions */
+p,
+li,
+.profile-card p,
+.modal-info p,
+.info-list p,
+.contact-card p,
+.home-description,
+.section-title span,
+.skill-member span,
+footer p {
+    font-family: var(--font-body) !important;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+/* Navigation and small labels */
+.navbar nav a,
+.small-title,
+.section-title p,
+.profile-card h4,
+.modal-small {
+    font-family: var(--font-body) !important;
+}
+
+/* Buttons, links, skill labels, and contact actions */
+.main-button,
+.profile-link,
+.skill-member,
+.skill-member b,
+.contact-button,
+.contact-links a,
+.back-top,
+.close-button {
+    font-family: var(--font-body) !important;
+}
+
+/* Keep popup subtitles readable */
+.modal-info h3,
+.skill-modal > p,
+.contact-modal > p {
+    font-family: var(--font-body) !important;
+}
+
+/* Preserve balanced typography on smaller screens */
+@media (max-width: 650px) {
+    .home h1 {
+        font-family: var(--font-heading) !important;
+    }
+
+    .section-title h2 {
+        font-family: var(--font-heading) !important;
+    }
+}
+
+
+
+/* Glowing heading highlight */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.logo,
+.profile-name,
+.section-title {
+    text-shadow:
+        0 0 5px rgba(255, 214, 150, 0.75),
+        0 0 12px rgba(255, 184, 92, 0.55),
+        0 0 22px rgba(255, 160, 60, 0.35);
+}
+
+/* Keep the glow subtle and smoothly highlighted on hover */
+h1,
+h2,
+h3,
+.section-title {
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+h1:hover,
+h2:hover,
+h3:hover,
+.section-title:hover {
+    text-shadow:
+        0 0 7px rgba(255, 224, 175, 0.95),
+        0 0 16px rgba(255, 184, 92, 0.75),
+        0 0 30px rgba(255, 145, 40, 0.55);
+}
+
+
+
+/* =========================================================
+   FINAL COLOR OVERRIDE — MIDNIGHT BLUE, ROSE QUARTZ, PEARL WHITE
+   Midnight Blue: #1B1F3B | Rose Quartz: #E6B8C2 | Pearl White: #FAF9F6
+   ========================================================= */
+:root {
+    --midnight-blue: #1B1F3B;
+    --rose-quartz: #E6B8C2;
+    --pearl-white: #FAF9F6;
+    --soft-rose: #F8E9ED;
+    --muted-text: #696779;
+}
+
+body { background: var(--pearl-white); color: var(--midnight-blue); }
+.navbar { background: var(--pearl-white); border-bottom-color: var(--rose-quartz); }
+.logo, .navbar nav a { color: var(--midnight-blue); }
+.logo span, .section-title p, .profile-card h4, .modal-small, .back-top { color: #B9798A; }
+.navbar nav a::after { background: var(--rose-quartz); }
+.navbar nav a:hover, .profile-link:hover { color: #B9798A; }
+
+.home {
+    background-color: var(--midnight-blue);
+    background-image:
+        radial-gradient(circle at 12% 22%, rgba(250,249,246,.75) 0 2px, transparent 3px),
+        radial-gradient(circle at 28% 72%, rgba(230,184,194,.8) 0 3px, transparent 4px),
+        radial-gradient(circle at 68% 28%, rgba(250,249,246,.65) 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 68%, rgba(230,184,194,.72) 0 3px, transparent 4px),
+        radial-gradient(circle at 48% 48%, rgba(250,249,246,.42) 0 2px, transparent 3px),
+        linear-gradient(-45deg, #1B1F3B, #343958, #514052, #292D4B, #1B1F3B);
+    background-size: 170px 190px, 230px 250px, 210px 220px, 270px 280px, 190px 210px, 400% 400%;
+    animation: portfolioBackgroundMove 22s ease-in-out infinite;
+    color: var(--pearl-white);
+}
+.home::before { border-color: rgba(230,184,194,.35); }
+.home::after { border-color: rgba(250,249,246,.22); }
+.small-title { color: var(--rose-quartz); }
+.home-description { color: #F4EAF0; }
+.main-button { background: var(--rose-quartz); color: var(--midnight-blue); }
+.main-button:hover { background: var(--pearl-white); color: var(--midnight-blue); }
+
+.team-section, .contact-section {
+    background-color: var(--pearl-white);
+    background-image:
+        radial-gradient(circle, rgba(230,184,194,.22) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255,255,255,.95) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(230,184,194,.15) 0 1.5px, transparent 2.5px);
+    background-size: 180px 210px, 240px 230px, 300px 260px;
+    animation: sectionParticles 25s linear infinite;
+}
+.section-title h2, .profile-card h3 { color: var(--midnight-blue); }
+.section-title span, .contact-card p, .skill-member span { color: var(--muted-text); }
+
+.profile-card, .contact-card {
+    background: #FFFFFF;
+    border-color: #EAD5DA;
+    box-shadow: 0 10px 30px rgba(27,31,59,.08);
+}
+.profile-card:hover, .contact-card:hover {
+    border-color: var(--rose-quartz);
+    box-shadow: 0 18px 40px rgba(27,31,59,.14);
+}
+.profile-image, .contact-avatar, .modal-image { border-color: var(--rose-quartz); }
+.profile-link { color: var(--midnight-blue); }
+
+.modal { background: rgba(15,17,38,.78); }
+.modal-box, .skill-modal, .contact-modal { background: var(--pearl-white); }
+.modal-box { scrollbar-color: var(--rose-quartz) #F4E8EB; }
+.modal-box::-webkit-scrollbar-track { background: #F4E8EB; }
+.modal-box::-webkit-scrollbar-thumb { background: var(--rose-quartz); }
+.modal-box::-webkit-scrollbar-thumb:hover { background: #C98F9D; }
+.modal-info h2, .skill-modal h2, .contact-modal h2 { color: var(--midnight-blue); }
+.modal-info h3, .skill-modal > p, .contact-modal > p { color: #B9798A; }
+.modal-info > p { color: var(--muted-text); }
+.info-list { border-top-color: #EAD5DA; }
+.info-list p { color: #45445A; }
+.close-button { color: var(--midnight-blue); }
+.close-button:hover { background: var(--rose-quartz); color: var(--midnight-blue); }
+
+.skills-section {
+    background-image:
+        radial-gradient(circle, rgba(250,249,246,.8) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(230,184,194,.25) 0 2px, transparent 3px),
+        linear-gradient(135deg, #FAF0F2, #E6B8C2);
+    background-size: 190px 220px, 260px 240px, 100% 100%;
+    animation: skillsParticles 27s linear infinite;
+    color: var(--midnight-blue);
+}
+.skills-section .section-title h2 { color: var(--midnight-blue); }
+.skills-section .section-title p { color: #9E6474; }
+.skills-section .section-title span { color: #696779; }
+.skill-member { background: #FFFFFF; color: var(--midnight-blue); }
+.skill-member:hover { background: #FFF4F6; }
+.skill-avatar { background: var(--rose-quartz); color: var(--midnight-blue); }
+.skill-member b { color: #B9798A; }
+.skill-tags span, .contact-links a {
+    background: #F8E9ED;
+    border-color: var(--rose-quartz);
+    color: var(--midnight-blue);
+}
+.contact-button { background: var(--midnight-blue); color: var(--pearl-white); }
+.contact-button:hover, .contact-links a:hover {
+    background: var(--rose-quartz);
+    color: var(--midnight-blue);
+}
+
+footer { background: var(--midnight-blue); color: var(--pearl-white); }
+footer h2 span { color: var(--rose-quartz); }
+footer p { color: #E8E6EF; }
+.back-top { color: var(--rose-quartz); }
+.back-top:hover { color: var(--pearl-white); }
+
+/* Recolored profile popup glow and floating particles */
+h1, h2, h3, h4, h5, h6, .logo, .profile-name, .section-title {
+    text-shadow: 0 0 5px rgba(230,184,194,.32), 0 0 12px rgba(230,184,194,.18);
+}
+h1:hover, h2:hover, h3:hover, .section-title:hover {
+    text-shadow: 0 0 7px rgba(230,184,194,.5), 0 0 16px rgba(230,184,194,.3);
+}
+body::after {
+    background-image:
+        radial-gradient(circle, rgba(250,249,246,.90) 0 2px, transparent 2.8px),
+        radial-gradient(circle, rgba(230,184,194,.78) 0 1.7px, transparent 2.6px),
+        radial-gradient(circle, rgba(250,249,246,.80) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle, rgba(230,184,194,.58) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(250,249,246,.85) 0 1.4px, transparent 2.4px);
+}
+.modal:target .modal-image { box-shadow: 0 12px 32px rgba(230,184,194,.22); }
+.modal:target .modal-image::before {
+    background-image:
+        radial-gradient(circle, #FAF9F6 0 3px, transparent 4px),
+        radial-gradient(circle, #E6B8C2 0 3px, transparent 4px),
+        radial-gradient(circle, #FAF9F6 0 2px, transparent 3px),
+        radial-gradient(circle, #B9798A 0 2.5px, transparent 3.5px),
+        radial-gradient(circle, #F8E9ED 0 4px, transparent 5px),
+        radial-gradient(circle, #E6B8C2 0 2px, transparent 3px);
+}
+.modal:target .modal-image::after {
+    background-image:
+        radial-gradient(circle, rgba(250,249,246,.95) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(230,184,194,.85) 0 3px, transparent 4px),
+        radial-gradient(circle, rgba(248,233,237,.95) 0 2.5px, transparent 3.5px),
+        radial-gradient(circle, rgba(250,249,246,.95) 0 3px, transparent 4px),
+        radial-gradient(circle, rgba(185,121,138,.65) 0 2px, transparent 3px);
+}
+.modal:target .modal-image:hover { box-shadow: 0 16px 38px rgba(230,184,194,.38); }
+
+
+/* =====================================================
+   CONTACT POPUP REDESIGN
+   MIDNIGHT BLUE + ROSE QUARTZ + PEARL WHITE
+   Only changes the View Contacts popup
+===================================================== */
+
+/* Dark, softly blurred background */
+.modal:target:has(.contact-modal) {
+    background: rgba(27, 31, 59, 0.78);
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    padding: 18px;
+}
+
+/* Main contact popup card */
+.modal:target .contact-modal {
+    box-sizing: border-box;
+    width: min(510px, 100%);
+    max-width: 510px;
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    position: relative;
+    isolation: isolate;
+    padding: 185px 30px 28px;
+
+    background: linear-gradient(
+        160deg,
+        #FFFFFF 0%,
+        #FAF9F6 65%,
+        #F8E9ED 100%
+    );
+
+    border: 1px solid rgba(230, 184, 194, 0.75);
+    border-radius: 24px;
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(27, 31, 59, 0.28),
+        0 8px 25px rgba(230, 184, 194, 0.20);
+
+    animation: contactPopupEnter 0.4s
+        cubic-bezier(.2, .8, .2, 1) both;
+
+    scrollbar-width: thin;
+    scrollbar-color: #E6B8C2 #FAF9F6;
+}
+
+/* Rose Quartz header */
+.modal:target .contact-modal::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 155px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(250, 249, 246, 0.45),
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #E6B8C2,
+            #B9798A
+        );
+
+    border-radius: 23px 23px 48% 12%;
+}
+
+/* Decorative circles */
+.modal:target .contact-modal::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -55px;
+    left: -55px;
+
+    width: 175px;
+    height: 175px;
+
+    border: 1px solid rgba(250, 249, 246, 0.45);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 18px rgba(250, 249, 246, 0.10),
+        0 0 0 38px rgba(250, 249, 246, 0.07);
+
+    pointer-events: none;
+}
+
+/* Profile photo */
+.modal:target .contact-modal .contact-avatar,
+.modal:target .contact-modal .contact-avatar.big {
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 142px;
+    height: 142px;
+    margin: 0;
+
+    border: 5px solid #FAF9F6;
+    border-radius: 50%;
+    overflow: hidden;
+
+    background: #F8E9ED;
+
+    box-shadow:
+        0 0 0 4px #E6B8C2,
+        0 12px 30px rgba(27, 31, 59, 0.20);
+}
+
+.modal:target .contact-modal .contact-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+}
+
+.modal:target .contact-modal .contact-avatar:hover img {
+    transform: scale(1.08);
+}
+
+/* Member name */
+.modal:target .contact-modal h2 {
+    position: relative;
+    margin: 0 0 7px;
+    color: #1B1F3B;
+
+    font-size: clamp(30px, 5vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+    text-shadow: 0 3px 14px rgba(230, 184, 194, 0.25);
+}
+
+/* Role or subtitle */
+.modal:target .contact-modal > p {
+    position: relative;
+    display: inline-block;
+
+    margin: 0 auto 25px;
+    padding: 9px 17px;
+
+    border-radius: 30px;
+    background: #F8E9ED;
+    border: 1px solid #E6B8C2;
+
+    color: #9E6474;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Contact information layout */
+.modal:target .contact-modal .contact-links {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    text-align: left;
+}
+
+/* Individual contact rows */
+.modal:target .contact-modal .contact-links a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    min-width: 0;
+    min-height: 58px;
+    padding: 15px 17px;
+
+    background: rgba(248, 233, 237, 0.80);
+    border: 1px solid #EAD5DA;
+    border-radius: 13px;
+
+    color: #1B1F3B;
+    font-family: var(--font-body, Arial), sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    box-shadow: 0 4px 12px rgba(27, 31, 59, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Default contact icon */
+.modal:target .contact-modal .contact-links a::before {
+    content: "↗";
+    flex: 0 0 35px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+    background: #E6B8C2;
+    color: #1B1F3B;
+
+    font-size: 19px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+/* Email icon */
+.modal:target .contact-modal
+.contact-links a[href^="mailto:"]::before {
+    content: "✉";
+}
+
+/* Phone icon */
+.modal:target .contact-modal
+.contact-links a[href^="tel:"]::before {
+    content: "☏";
+}
+
+/* Facebook icon */
+.modal:target .contact-modal
+.contact-links a[href*="facebook.com"]::before {
+    content: "ⓕ";
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+}
+
+/* Instagram icon */
+.modal:target .contact-modal
+.contact-links a[href*="instagram.com"]::before {
+    content: "◎";
+    font-size: 23px;
+}
+
+/* Contact link hover */
+.modal:target .contact-modal .contact-links a:hover {
+    transform: translateY(-2px);
+    background: #1B1F3B;
+    border-color: #1B1F3B;
+    color: #FAF9F6;
+    box-shadow: 0 8px 20px rgba(27, 31, 59, 0.20);
+}
+
+.modal:target .contact-modal
+.contact-links a:hover::before {
+    background: #E6B8C2;
+    color: #1B1F3B;
+}
+
+/* Close button */
+.modal:target .contact-modal .close-button {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(250, 249, 246, 0.65);
+    border-radius: 50%;
+
+    background: rgba(27, 31, 59, 0.32);
+    color: #FAF9F6;
+
+    font-size: 25px;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.modal:target .contact-modal .close-button:hover {
+    background: #FAF9F6;
+    color: #1B1F3B;
+    transform: rotate(90deg);
+}
+
+/* Popup entrance animation */
+@keyframes contactPopupEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Scrollbar */
+.modal:target .contact-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal:target .contact-modal::-webkit-scrollbar-thumb {
+    background: #E6B8C2;
+    border-radius: 10px;
+}
+
+.modal:target .contact-modal::-webkit-scrollbar-track {
+    background: #FAF9F6;
+}
+
+/* Mobile adjustments */
+@media (max-width: 650px) {
+    .modal:target:has(.contact-modal) {
+        padding: 12px;
+    }
+
+    .modal:target .contact-modal {
+        width: 100%;
+        max-width: 430px;
+        padding: 175px 20px 23px;
+        border-radius: 21px;
+    }
+
+    .modal:target .contact-modal::before {
+        height: 145px;
+    }
+
+    .modal:target .contact-modal .contact-avatar,
+    .modal:target .contact-modal .contact-avatar.big {
+        top: 25px;
+        width: 128px;
+        height: 128px;
+    }
+
+    .modal:target .contact-modal > p {
+        margin-bottom: 20px;
+    }
+
+    .modal:target .contact-modal .contact-links a {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .modal:target .contact-modal,
+    .modal:target .contact-modal * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
